@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 may. 2022, 23:48:55
+    Author     : Diana Jiménez
+*/
+
+
+/*content-box: toma en cuenta contenido,border y padding para el calculo de la caja sumativa
+  border-box: modifica valores de contenido para que coincida con nuestro ancho y alto. 
+*/
+
+/*Se le añaden propiedades al div*/
+.block{
+    background-color: pink;
+    width: 200px;    /*Ancho */
+    height: 200px;   /*Altura*/
+    padding: 50px;
+    border: 5px solid blueviolet;
+    box-sizing: border-box;
+    margin: auto;
+}
