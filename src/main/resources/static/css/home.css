@@ -2,20 +2,86 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
 */
+/*
+   En CSS se llaman reglas al conjunto de atributos a utilizar 
+   Unidades de medida: vh (1/100), px=pixeles, cm, %=relativo al tamaño del elemento padre
+   padding: crea un espacio entre componentes
+   box-sizing: ancho= ancho+border+padding
+   display= como se muestra o el comportamiento, un bloque de nivel*/
+
+
 /* 
     Created on : 26 may. 2022, 18:09:53
     Author     : Diana Jiménez
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');     /*Importar fuente*/
 
-
-.contenido {  
-    
+*{                         /*Asterisco: selector universal*/
+    margin:0;
+    padding:0;
+    font-family: 'Nuosu SIL', serif;
 }
 
 
-#Prueba {
-     
+.container{                 /*Toda la página*/
+    height:100vh;
+    width:100%;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left:5%;
+    padding-right:5%;
+    box-sizing: border-box;
+    position:relative;
 }
 
+.navbar{                 /*Barra de navegacion*/
+    height:15vh;
+    width:100%;
+    margin:auto;
+    display:flex;        /*Cómo se comportan los elementos dentro del contenedor, ej: el navbar*/
+    align-items: center;
+}
+
+.logo{
+    width:160px;
+    cursor:pointer;
+}
+
+nav{
+    flex:1;
+    padding-left:60px;
+}
+
+nav ul li{
+    display:inline-block;
+    list-style:none;
+    margin:0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:darkorchid;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top:24px;
+    margin-bottom:15px;
+    color:darkorchid;
+}
+
+.content p{
+    font-size:20px;
+    color:blueviolet;
+}
+
+.miImagen{            /*Agregando reglas a la imagen*/
+    height:50%;
+    position:absolute;
+    bottom:50px;
+    right:160px;
+}
 

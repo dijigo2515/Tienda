@@ -5,10 +5,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>Titulo</title>
-       
+        <title>Login</title>
+        <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
-        <div>Contenido</div>
+        
+        <div class="center">                         <!-- El cuadro centrado -->
+            <form method="post">           <!-- Enviamos datos, el username y el password -->
+                <h1>LOGIN</h1>
+                
+                <div class="txt_field">
+                    <input type="text" required>     <!-- Required es que tiene que llenar el campo -->
+                    <label>Username</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                
+                <div class="pass">Forgot Password</div>
+                <input type="submit" value="Login">
+
+
+                <div class="singup">
+                    Not a member ? <a href="#">Signup</a>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

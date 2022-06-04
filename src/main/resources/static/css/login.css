@@ -6,4 +6,141 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : 26 may. 2022, 18:13:15
     Author     : Diana Jiménez
 */
+/*Cambiar la tipografia*/
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Tai+Heritage+Pro:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Nuosu SIL', serif;
+}
+
+body{   
+    background: linear-gradient(120deg,pink,violet);
+    overflow: hidden;   
+    height: 100vh;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px; 
+    background-color: white;
+    transform: translate(-50%,-50%);         /*Traslada la cajita*/
+    border-radius: 10px;                     /*Edita el borde de la cajita*/
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.5);       /*Le agrega sombra a la cajita*/
+}
+
+.center h1{                  /*Modificar login*/
+    text-align: center;
+    padding: 20px 0; 
+    border-bottom: 1px solid silver;    /*Linea inferior en la cajita*/
+}
+
+.center form{                   /*Modificar form*/
+    padding: 0 40px; 
+    box-sizing: border-box;    
+}
+
+form .txt_field{
+    position:relative;
+    border-bottom: 2px solid silver;
+    margin: 30px 0;     
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px; 
+    height: 40px; 
+    font-size: 15px;
+    border: none;
+    background: none;
+}
+
+.txt_field label{                       /*Label: es el username*/
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    color: #adadad;
+    transform: translate(-50%);
+    font-size: 16px;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: gray;
+    cursor: pointer;
+}
+
+.pass:hover{             /*Se le va a aplicar ademas, esta decoracion, al pasar el mouse, se subraya*/
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px; 
+    border: 1px solid;
+    background-color: deepskyblue;              /*Color de fondo de la cajita*/
+    border-radius: 25px; 
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;                               /*Color de la letra de la cajita*/
+}
+
+input[type="submit"]:hover{ 
+    border-color: black;
+    background: purple;
+    transition: .6s;
+}
+
+.singup{
+    margin: 30px 0; 
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.singup a{
+    color: #2691d9;
+    text-decoration: none; 
+}
+
+.singup a:hover{ 
+    text-decoration: underline;
+}
+
+.txt_field span::before{         /*before: insertar algo al contenido antes que se seleccione*/
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px; 
+    pointer-events: none; 
+    transition: .5s;
+    
+}
+
+.txt_field input:focus~label,
+.txt_field input:valid~label{
+    top: -20px; 
+    color: #2691d9;   
+}
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before{
+    width: 100%;  
+}
+
+
+
+
+
+
+
+
 
