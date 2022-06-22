@@ -38,7 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .navbar{                 /*Barra de navegacion*/
     height:15vh;
-    width:100%;
+    width:70%;
     margin:auto;
     display:flex;        /*Cómo se comportan los elementos dentro del contenedor, ej: el navbar*/
     align-items: center;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Persona</title>
+    </head>
+    <body>
+        <h1 th:text="$(Titulo)"></h1>        <!-- th:uso de thymeleaf -->
+        <table>       
+            
+            <thead class="thead-dark">      <!-- Table head: titulos -->
+                <tr>     <!-- Fila de nuestra tabla -->
+                 <th scope="col">Nombre  </tr>
+                 <th scope="col">Apellido 1 </tr>
+                 <th scope="col">Apellido 2 </tr>
+                 <th scope="col">Email </tr>
+                 <th scope="col">Telefono </tr>
+                 <th scope="col">Pais </tr>
+                 <th scope="col">Editar </tr>
+                 <th scope="col">Eliminar </tr>
+               </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : $(personas)">       <!-- Objeto de tipo persona -->
+                <tr> 
+                 <td th:text="${user.getNombre}"></td>
+                 <td th:text="${user.getApelido1}"></td>
+                 <td th:text="${user.getApellido2}"></td>
+                 <td th:text="${user.getEmail}"></td>
+                 <td th:text="${user.getTelefono}"></td>
+                 <td th:text="${user.getPais.getPais}"></td>
+                 <td>
+                     <a th:href="@{/editPersona/{id}(id=${user.getId})}">Edit</a>
+                 </td>
+                 <td>
+                     <a th:href="@{/delete{id}(id=${user.getId})}">Delete</a>                     
+                 </td>
+              </tr> 
+           </th:block> 
+         </tbody> 
+    </body>
+</html>
