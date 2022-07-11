@@ -51,10 +51,10 @@ public class PersonaController {
     @PostMapping("/save")
     public String guardarPersona(@ModelAttribute Persona persona) {
         personaService.savePersona(persona);                  //Guardando la nueva persona en la base de datos, nueva fila
-        return "redirect:/persona";            //Redije a otro getmapping    
+        return "redirect:/persona";            //Redirije a otro getmapping    
     }
 
-    @GetMapping("/editpersona/{id}")
+    @GetMapping("/editPersona/{id}")
     public String editarPersona(@PathVariable("id") Long idPersona, Model model) {
         Persona persona = personaService.getPersonaById(idPersona);
         List<Pais> listaPaises = paisService.listCountry();

@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Persona</title>
-    </head>
+    <head th:replace="plantilla/template::head"></head>
+    
     <body>
-        <h1 th:text="$(Titulo)"></h1>        <!-- th:uso de thymeleaf -->
-        <table>       
-            
-            <thead class="thead-dark">      <!-- Table head: titulos -->
-                <tr>     <!-- Fila de nuestra tabla -->
-                 <th scope="col">Nombre  </tr>
-                 <th scope="col">Apellido 1 </tr>
-                 <th scope="col">Apellido 2 </tr>
-                 <th scope="col">Email </tr>
-                 <th scope="col">Telefono </tr>
-                 <th scope="col">Pais </tr>
-                 <th scope="col">Editar </tr>
-                 <th scope="col">Eliminar </tr>
-               </tr>
+        <header th:replace="plantilla/template::header"></header>
+       
+        <h1 th:text="${titulo}"></h1> 
+        <h1 th:text="#{cliente.nombre}"></h1> 
+
+        <table class="table table-success table-striped-columns">
+            <thead class="thead-green">
+                <tr>   
+                    <th scope="col">Nombre </th>
+                    <th scope="col">Apellido 1 </th>
+                    <th scope="col">Apellido 2 </th>
+                    <th scope="col">Email </th>
+                    <th scope="col">Telefono </th>
+                    <th scope="col">Pais </th>
+                    <th scope="col">Editar </th>
+                    <th scope="col">Eliminar</th>
+                </tr>
             </thead>
             <tbody>
-            <th:block th:each="user : $(personas)">       <!-- Objeto de tipo persona -->
-                <tr> 
-                 <td th:text="${user.getNombre}"></td>
-                 <td th:text="${user.getApelido1}"></td>
-                 <td th:text="${user.getApellido2}"></td>
-                 <td th:text="${user.getEmail}"></td>
-                 <td th:text="${user.getTelefono}"></td>
-                 <td th:text="${user.getPais.getPais}"></td>
-                 <td>
-                     <a th:href="@{/editPersona/{id}(id=${user.getId})}">Edit</a>
-                 </td>
-                 <td>
-                     <a th:href="@{/delete{id}(id=${user.getId})}">Delete</a>                     
-                 </td>
-              </tr> 
-           </th:block> 
-         </tbody> 
-    </body>
+            <th:block th:each="user:${personas}">  
+                <tr>
+                    <td th:text="${user.getNombre}"></td>  
+                    <td th:text="${user.getApellido1}"></td> 
+                    <td th:text="${user.getApellido2}"></td> 
+                    <td th:text="${user.getEmail}"></td> 
+                    <td th:text="${user.getTelefono}"></td> 
+                    <td th:text="${user.getPais.getPais}"></td>
+                    <td>
+                        <a th:href="@{/editPersona/{id}(id=${user.getId})}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/delete/{id}(id=${user.getId})}">Delete</a>
+                    </td>  
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+   </body>
+   <footer th:replace="plantilla/template::footer"></footer>
 </html>
