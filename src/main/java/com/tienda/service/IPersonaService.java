@@ -16,4 +16,5 @@ public interface IPersonaService {
     public Persona getPersonaById (long id);   //Obtener persona con el ID 
     public void savePersona (Persona persona);   // Guardar persona 
     public void delete (long id);         //Borrar fila de Id
+    public Persona findByNombre (String nombre);     //Metodo para encontrar persona por el nombre
 }

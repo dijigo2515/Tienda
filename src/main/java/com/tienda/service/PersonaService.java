@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class PersonaService implements IPersonaService {    //Implementar todos los métodos abstractos
+public class PersonaService implements IPersonaService {    //Implementar todos los metodos abstractos
     
     @Autowired    //Dependencias
     private PersonaRepository personaRepository;        //Objeto de tipo PersonaRepository
@@ -27,7 +27,7 @@ public class PersonaService implements IPersonaService {    //Implementar todos 
     }
 
     @Override     
-    public Persona getPersonaById(long id) {              //id: Parámetro
+    public Persona getPersonaById(long id) {              //id: Parametro
        return personaRepository.findById(id).orElse(null);   //id: Argumento, Encontrar por el id
        //Si no devuelve la persona por el id, devuelve un null
     }
@@ -41,5 +41,9 @@ public class PersonaService implements IPersonaService {    //Implementar todos 
     public void delete(long id) {
       personaRepository.deleteById(id);        //Borrar por el id
     }
-
+    
+    @Override                                        
+    public Persona findByNombre(String nombre){               //Implementacion de encontrar por el nombre
+        return personaRepository.findByNombre(nombre);
+    }
 }
